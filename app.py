@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 from flask import Flask, request, jsonify
 from mongoengine import connect, Document, StringField, ReferenceField
 from werkzeug.security import generate_password_hash, check_password_hash
+from waitress import serve
 import jwt
 import datetime
 import os
@@ -107,5 +108,4 @@ def verify_token(token):
     except:
         return None
 
-if __name__ == '__main__':
-    app.run(debug=True)
+serve(app, host='0.0.0.0', port=5000)
