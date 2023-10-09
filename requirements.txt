@@ -1,0 +1,5 @@
+Flask
+mongoengine
+PyJWT
+python-dotenv
+waitress
